@@ -95,6 +95,11 @@ def replay():
     response = input('Do you want to play again? Enter Yes or No: ').lower()
     return response == ('yes')
 
+def end_game():
+    """ Ends the Tic Tac Toe game. """
+    print('Thank you for playing Tic Tac Toe!')
+    exit()
+
 print('Welcome to Tic Tac Toe Game!')
 
 while True:
@@ -146,4 +151,6 @@ while True:
                     turn = 'Player 1'
         
         if not replay():
+            end_game()
+        else:
             break

@@ -40,7 +40,7 @@ If you'd like to contribute to the development of this Tic Tac Toe game, please 
 ##  Fork the repository.
 -   Create a new branch for your feature or bug fix.
 -   Make your changes and submit a pull request.
--   
+
 **License**
 ===========
 _This project is licensed under the MIT License - see the LICENSE file for details._

@@ -4,10 +4,17 @@ import random
 """ Writing a function that will randomly choose a position for the player to place their marker. """
 
 def clear_output():
-    """ Writing a function that can print out a board. """
+    """Clears the console screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def display_board(board, current_turn):
+    """
+    Displays the Tic Tac Toe board.
+
+    Parameters:
+    - board (list): The current state of the board.
+    - current_turn (str): The current player's turn ('Player 1' or 'Player 2').
+    """
     clear_output()
     print(f"\n{current_turn}'s turn:")
     print('   |   |   ')

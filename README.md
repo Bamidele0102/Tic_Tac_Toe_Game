@@ -1,5 +1,6 @@
 This is a repository for my Tic Tac Toe game
 =============================================
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/300px-Tic_tac_toe.svg.png)
 
 Welcome to the Tic Tac Toe game! This simple console-based game allows two players to take turns marking spaces on a 3x3 grid, aiming to get three in a row.
 

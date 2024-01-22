@@ -1,4 +1,7 @@
 import os
+""" This is a module that contains functions that will be used in the main program. """
+import random
+""" Writing a function that will randomly choose a position for the player to place their marker. """
 
 def clear_output():
     """ Writing a function that can print out a board. """
@@ -48,8 +51,6 @@ def win_check(board, mark):
     (board[7] == mark and board[5] == mark and board[3] == mark) or # diagonal
     (board[9] == mark and board[5] == mark and board[1] == mark)) # diagonal
 
-import random
-""" Writing a function that will randomly choose a position for the player to place their marker. """
 def choose_first():
     """ Randomly choose the player who goes first. """
     if random.randint(0, 1) == 0:

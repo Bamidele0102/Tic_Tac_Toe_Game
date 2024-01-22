@@ -1,0 +1,50 @@
+import tkinter as tk
+from tkinter import messagebox
+from tic_tac_toe import display_board, player_input, place_marker, win_check, choose_first, space_check, full_board_check
+
+
+def clear_board():
+    global theBoard, player1_marker, player2_marker, turn
+    theBoard = [' '] * 10
+    player1_marker, player2_marker = player_input()
+    turn = choose_first()
+    display_board()
+
+def on_click(position):
+    global turn
+    if space_check(theBoard, position):
+        if turn == 'Player 1':
+            place_marker(theBoard, player1_marker, position)
+            if win_check(theBoard, player1_marker, position):
+                display_board()
+                messagebox.showinfo('Game Over', 'Congratulations! Player 1 has won!')
+                clear_board()
+            else:
+                turn = 'Player 2'
+        else:
+            place_marker(theBoard, player2_marker, position)
+            if win_check(theBoard, player2_marker, position):
+                display_board()
+                messagebox.showinfo('Game Over', 'Congratulations! Player 2 has won!')
+                clear_board()
+            else:
+                turn = 'Player 1'
+        display_board()
+
+app = tk.Tk()
+app.title('Tic Tac Toe')
+
+buttons = [None] + [tk.Button(app, text=' ', font=('Helvetica', 24), width=4, height=2, command=lambda pos=pos: on_click(pos)) for pos in range(1, 10)]
+
+def display_board():
+    for pos, button in enumerate(buttons[1:], start=1):
+        button['text'] = theBoard[pos]
+
+for row in range(3):
+    for col in range(3):
+        buttons[row * 3 + col + 1].grid(row=row, column=col)
+
+clear_button = tk.Button(app, text='Clear Board', command=clear_board)
+clear_button.grid(row=3, column=0, columnspan=3)
+
+app.mainloop()
